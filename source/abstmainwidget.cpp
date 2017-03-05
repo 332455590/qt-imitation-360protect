@@ -1,4 +1,4 @@
-#include "abstmainwidget.h"
+﻿#include "abstmainwidget.h"
 #include<QVBoxLayout>
 #include<QDebug>
 abstmainwidget::abstmainwidget(QWidget *parent) : QWidget(parent)

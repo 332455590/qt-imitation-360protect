@@ -6,6 +6,7 @@
 #include"my360button.h"
 #include"my360label.h"
 #include <QTextCodec>
+
 UpmainWindow::UpmainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setMinimumSize(900,440);
@@ -14,20 +15,18 @@ UpmainWindow::UpmainWindow(QWidget *parent) : QMainWindow(parent)
     setStyleSheet("UpmainWindow{background:rgb(57,196,44);}"
                   "QLabel{background:transparent;color:white;}"
                   "QPushButton{background:transparent}");
+
+
     m_MousePressed=false;
     QLabel *m_logolabel=new QLabel(this);
     m_logolabel->setGeometry(10,5,16,16);
     m_logolabel->setStyleSheet("border-image:url(:/image/360logo.png)");
 
-    //QTextCodec::setCodecForTr(QTextCodec::codecForTheName("utf-8"));
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("utf-8"));
-
-    QLabel *m_titlelabel=new QLabel(tr("360安全卫士领航版"),this);
+    QLabel *m_titlelabel=new QLabel(u8"360安全卫士领航版",this);
     m_titlelabel->setGeometry(30,5,105,16);
 
     main3Button *m_btnupdate=new main3Button(":/image/update_btn.png",this);
     m_btnupdate->setGeometry(135,5,16,16);
-
 
     m_btnmini=new main3Button(":/image/min.png",this);
     m_btnexit=new main3Button(":/image/close.png",this);
@@ -57,19 +56,19 @@ UpmainWindow::UpmainWindow(QWidget *parent) : QMainWindow(parent)
     font2.setFamily("黑体");
     font2.setPixelSize(36);
 
-    QLabel *m_title=new QLabel(tr("上次电脑体检良好,请继续保持！"),this);
+    QLabel *m_title = new QLabel(u8"上次电脑体检良好,请继续保持！",this);
     m_title->setStyleSheet("color:white;");
     m_title->setGeometry(240,150,600,40);
     m_title->setFont(font2);
 
-    QLabel *m_title2=new QLabel(tr("上次体检是1分钟以前,共发现5个问题,已全部处理"),this);
+    QLabel *m_title2=new QLabel(u8"上次体检是1分钟以前,共发现5个问题,已全部处理",this);
     m_title2->setStyleSheet("color:white;font-size:14px;");
     m_title2->setGeometry(240,200,400,32);
 
     m_btnhead=new headButton(this);
     m_btnhead->setGeometry(840,50,52,52);
 
-    wordslineButton *m_btnword=new wordslineButton(tr("登录360帐号"),this);
+    wordslineButton *m_btnword=new wordslineButton(u8"登录360帐号",this);
     m_btnword->setGeometry(760,70,80,20);
 
     main3Button *m_btnexamine=new main3Button(":/image/btn_examine_now.png",this);
@@ -81,14 +80,14 @@ UpmainWindow::UpmainWindow(QWidget *parent) : QMainWindow(parent)
                                  "QPushButton::hover{border-image:url(:/image/security_safe_hover.png)}");
     m_btnsecurity->setCursor(Qt::PointingHandCursor);
 
-    QLabel *m_security=new QLabel(tr("安全防护中心"),this);
+    QLabel *m_security=new QLabel(u8"安全防护中心",this);
     m_security->setGeometry(30,400,100,16);
 
     QLabel *label=new QLabel(this);
     label->setGeometry(120,360,1,50);
     label->setStyleSheet("background:transparent;border-image:url(:/image/guardline.png);");
 
-    QLabel *m_payfor=new QLabel(tr("网购先陪"),this);
+    QLabel *m_payfor=new QLabel(u8"网购先陪",this);
     m_payfor->setGeometry(145,400,60,16);
     QPushButton *m_btnnetpayfor=new QPushButton(this);
     m_btnnetpayfor->setGeometry(150,360,37,37);
@@ -99,14 +98,15 @@ UpmainWindow::UpmainWindow(QWidget *parent) : QMainWindow(parent)
 }
 void UpmainWindow::mousePressEvent(QMouseEvent *event)
 {
-      if (event->button() == Qt::LeftButton)
-     {
-       MainWindow *mainwin=(MainWindow *)this->parentWidget()->parentWidget();
-       m_WindowPos = mainwin->pos();
-       m_MousePos = event->globalPos();
-       this->m_MousePressed = true;
-      }
+    if (event->button() == Qt::LeftButton)
+    {
+        MainWindow *mainwin=(MainWindow *)this->parentWidget()->parentWidget();
+        m_WindowPos = mainwin->pos();
+        m_MousePos = event->globalPos();
+        this->m_MousePressed = true;
+    }
 }
+
 void UpmainWindow::mouseMoveEvent(QMouseEvent *event)
 {
     if (m_MousePressed)
@@ -116,6 +116,7 @@ void UpmainWindow::mouseMoveEvent(QMouseEvent *event)
         }
 
 }
+
 void UpmainWindow::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)

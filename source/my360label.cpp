@@ -1,8 +1,8 @@
-#include "my360label.h"
+﻿#include "my360label.h"
 #include<QPainter>
 myscoreLabel::myscoreLabel(QString pixscore,QWidget*parent):QLabel(parent)
 {
-    m_pixscore=QPixmap(pixscore);
+    m_pixscore = QPixmap(pixscore);
 
 
 }
@@ -16,5 +16,5 @@ void myscoreLabel::paintEvent(QPaintEvent *)
     QFont font;
     font.setPixelSize(14);
     p.setFont(font);
-    p.drawText(width()/2+m_pixscore.width()/2-5,height()/2+m_pixscore.height()/2-5,tr("分"));
+    p.drawText(width()/2+m_pixscore.width()/2-5,height()/2+m_pixscore.height()/2-5, u8"分");
 }

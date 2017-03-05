@@ -15,13 +15,13 @@ mainwindowswidup::mainwindowswidup(QWidget *parent) : QWidget(parent)
 
     m_btnreturn=new main3Button(":/image/return.png",this);
     m_btnreturn->setGeometry(0,0,115,38);
-
 }
+
 void mainwindowswidup::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.init(this);
     QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget,&opt,&painter,this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 

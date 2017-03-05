@@ -1,4 +1,4 @@
-#ifndef UPMAINWINDOW_H
+﻿#ifndef UPMAINWINDOW_H
 #define UPMAINWINDOW_H
 
 #include <QMainWindow>

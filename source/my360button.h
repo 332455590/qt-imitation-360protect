@@ -3,18 +3,21 @@
 
 #include <QObject>
 #include <QWidget>
-#include<QPaintEvent>
-#include<QEvent>
-#include<QPushButton>
-#include<qpropertyanimation.h>
-#include<QDebug>
+#include <QPaintEvent>
+#include <QEvent>
+#include <QPushButton>
+#include <qpropertyanimation.h>
+#include <QDebug>
 
-class mainButton : public QPushButton//用于主的图片
+class mainButton : public QPushButton   //用于主的图片
 {
     Q_OBJECT
+
 public:
     mainButton(QString pixnormal,QString pixenter,QString pixleave,QWidget*parent);
+
     ~mainButton();
+
 protected:
     void enterEvent(QEvent*);
     void leaveEvent(QEvent*);
@@ -30,10 +33,12 @@ protected:
     int m_leaveIndex;
     bool m_enter;
     bool m_leave;
+
 public slots:
     void entervaluechange(QVariant var){m_enterIndex=var.toInt();update();}
     void leavevaluechange(QVariant var){m_leaveIndex=var.toInt();update();}
 };
+
 class main2Button:public QPushButton//用于4太图片加下文字
 {
     Q_OBJECT
@@ -181,37 +186,19 @@ private:
 class main6Button:public QPushButton
 {
     Q_OBJECT
+
 public:
-    main6Button(QString pixurl,QString text,QWidget*parent=0);
+    main6Button(QString pixurl, QString text,QWidget*parent=0);
+
 protected:
     void paintEvent(QPaintEvent*);
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
+
 private:
     QString m_text;
     QPixmap m_pix;
-    bool m_enter;
+    bool    m_enter;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif // MY360BUTTON_H

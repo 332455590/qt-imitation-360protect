@@ -8,11 +8,12 @@ class myscoreLabel : public QLabel
 {
 public:
     myscoreLabel(QString pixscore,QWidget*parent=0);
-    protected:
-   void paintEvent(QPaintEvent*);
-private:
-   QPixmap m_pixscore;
 
+protected:
+    void paintEvent(QPaintEvent*);
+
+private:
+    QPixmap m_pixscore;
 };
 
 #endif // MY360LABEL_H

@@ -1,26 +1,23 @@
-#include "csxfwidget.h"
+﻿#include "csxfwidget.h"
 #include"qlabel.h"
 #include <QTextCodec>
+
 Csxfwidget::Csxfwidget(QWidget*parent):abstmainwidget(parent)
 {
-
     QLabel *m_logo=new QLabel(this->topwidget());
     m_logo->setStyleSheet("border-image:url(:/image/logo_normal.png)");
     m_logo->setGeometry(50,50,76,75);
 
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("utf-8"));
-
     QFont font2;
     font2.setFamily("黑体");
     font2.setPixelSize(27);
-  //  font2.setBold(true);
 
-    QLabel *m_title=new QLabel(tr("您的电脑很安全！"),this->topwidget());
+    QLabel *m_title=new QLabel(u8"您的电脑很安全！",this->topwidget());
     m_title->setStyleSheet("color:white;font:24");
     m_title->setGeometry(150,60,400,32);
     m_title->setFont(font2);
 
-    QLabel *m_title2=new QLabel(tr("定期木马查杀,漏洞修复,时刻保持电脑健康"),this->topwidget());
+    QLabel *m_title2=new QLabel(u8"定期木马查杀,漏洞修复,时刻保持电脑健康",this->topwidget());
     m_title2->setStyleSheet("color:white;");
     m_title2->setGeometry(150,92,400,32);
 
@@ -39,9 +36,9 @@ Csxfwidget::Csxfwidget(QWidget*parent):abstmainwidget(parent)
     m_btn3->setGeometry(620,100,140,140);
 
 
-    QLabel *m_labkssm=new QLabel(tr("快速扫描"),this->downwidget());
-    QLabel *m_labqpsm=new QLabel(tr("全盘扫描"),this->downwidget());
-    QLabel *m_labzdysm=new QLabel(tr("自定义扫描"),this->downwidget());
+    QLabel *m_labkssm=new QLabel(u8"快速扫描",this->downwidget());
+    QLabel *m_labqpsm=new QLabel(u8"全盘扫描",this->downwidget());
+    QLabel *m_labzdysm=new QLabel(u8"自定义扫描",this->downwidget());
     m_labkssm->setStyleSheet("color:rgb(68,68,68);font: 13pt 微软雅黑;");
     m_labqpsm->setStyleSheet("color:rgb(68,68,68);font: 13pt 微软雅黑;");
     m_labzdysm->setStyleSheet("color:rgb(68,68,68);font: 13pt 微软雅黑;");
@@ -56,9 +53,9 @@ Csxfwidget::Csxfwidget(QWidget*parent):abstmainwidget(parent)
     main3Button *m_btn5=new main3Button(":/image/system_fix.png",downwidget());
     m_btn5->setGeometry(800,310,60,60);
 
-    QLabel *m_labcgxu=new QLabel(tr("常规修复"),downwidget());
+    QLabel *m_labcgxu=new QLabel(u8"常规修复",downwidget());
 
-    QLabel *m_labldxf=new QLabel(tr("漏动修复"),downwidget());
+    QLabel *m_labldxf=new QLabel(u8"漏动修复",downwidget());
     m_labcgxu->setStyleSheet("color:rgb(68,68,68);font: 14px 微软雅黑;");
     m_labldxf->setStyleSheet("color:rgb(68,68,68);font: 14px 微软雅黑;");
     m_labcgxu->setGeometry(710,380,80,30);
@@ -68,7 +65,7 @@ Csxfwidget::Csxfwidget(QWidget*parent):abstmainwidget(parent)
 
 
 
-    QLabel *m_lab=new QLabel(tr("已启用查杀引擎："),downwidget());
+    QLabel *m_lab=new QLabel(u8"已启用查杀引擎：",downwidget());
     m_lab->setStyleSheet("color: rgb(153,153,153)");
     m_lab->setGeometry(25,423,100,24);
 
@@ -83,20 +80,20 @@ Csxfwidget::Csxfwidget(QWidget*parent):abstmainwidget(parent)
     main3Button*m_btndown5=new main3Button(":/image/engStateBtnQVM.png",downwidget());
     m_btndown5->setGeometry(230,423,24,24);
 
-    main5Button *m_btndown6=new main5Button(":/image/scan_setting.png",tr("设置"),downwidget());
+    main5Button *m_btndown6=new main5Button(":/image/scan_setting.png", u8"设置",downwidget());
     m_btndown6->setGeometry(700,423,50,25);
 
-    QPushButton *m_btndown7=new QPushButton(tr("信任区"),downwidget());
+    QPushButton *m_btndown7=new QPushButton(u8"信任区",downwidget());
     m_btndown7->setGeometry(750,423,50,24);
     m_btndown7->setStyleSheet("QPushButton{background:transparent;color: rgb(0,138,255);}"
                               "QPushButton::hover{color: rgb(0,180,255);}");
 
-    QPushButton *m_btndown8=new QPushButton(tr("恢复区"),downwidget());
+    QPushButton *m_btndown8=new QPushButton(u8"恢复区",downwidget());
     m_btndown8->setGeometry(800,423,50,24);
     m_btndown8->setStyleSheet("QPushButton{background:transparent;color: rgb(0,138,255);}"
                               "QPushButton::hover{color: rgb(0,180,255);}");
 
-    QPushButton *m_btndown9=new QPushButton(tr("上报区"),downwidget());
+    QPushButton *m_btndown9=new QPushButton(u8"上报区",downwidget());
     m_btndown9->setGeometry(850,423,50,24);
     m_btndown9->setStyleSheet("QPushButton{background:transparent;color: rgb(0,138,255);}"
                               "QPushButton::hover{color: rgb(0,180,255);}");

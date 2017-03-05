@@ -1,4 +1,4 @@
-#include "dnqlwidget.h"
+﻿#include "dnqlwidget.h"
 #include"qlabel.h"
 #include "my360button.h"
 dnqlWidget::dnqlWidget(QWidget*parent):abstmainwidget(parent)
@@ -16,7 +16,7 @@ dnqlWidget::dnqlWidget(QWidget*parent):abstmainwidget(parent)
     font2.setPixelSize(27);
   //  font2.setBold(true);
 
-    QLabel *m_title=new QLabel("已选择6项清理类型",this->topwidget());
+    QLabel *m_title=new QLabel(u8"已选择6项清理类型",this->topwidget());
     m_title->setStyleSheet("color:white;");
     m_title->setGeometry(150,60,400,32);
     m_title->setFont(font2);

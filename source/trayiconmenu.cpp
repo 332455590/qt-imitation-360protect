@@ -1,4 +1,4 @@
-#include "trayiconmenu.h"
+﻿#include "trayiconmenu.h"
 #include<QAction>
 #include<QWidgetAction>
 #include<QHBoxLayout>
@@ -42,10 +42,10 @@ void trayIconMenu:: initlevel4()
 }
 void trayIconMenu:: initlevel3()
 {
-    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_switchmode.png"),"游戏,网购模式",this);
+    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_switchmode.png"), u8"游戏,网购模式",this);
     QMenu *menuupdate=new QMenu(this);
-    QAction *actionappupdate=new QAction(QIcon(":/image/traymen/ico_game_mode.png"),"进入游戏模式",this);
-    QAction *actiondownloadmanger=new QAction(QIcon(":/image/traymen/ico_netpay_mode.png"),"进入网购模式",this);
+    QAction *actionappupdate=new QAction(QIcon(":/image/traymen/ico_game_mode.png"), u8"进入游戏模式",this);
+    QAction *actiondownloadmanger=new QAction(QIcon(":/image/traymen/ico_netpay_mode.png"), u8"进入网购模式",this);
 
     menuupdate->addAction(actionappupdate);
     menuupdate->addAction(actiondownloadmanger);
@@ -54,10 +54,10 @@ void trayIconMenu:: initlevel3()
 }
 void trayIconMenu::initlevel2()
 {
-    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_update.png"),"升级",this);
+    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_update.png"), u8"升级",this);
     QMenu *menuupdate=new QMenu(this);
-    QAction *actionappupdate=new QAction(QIcon(":/image/traymen/ico_update_item.png"),"程序升级",this);
-    QAction *actiondownloadmanger=new QAction(QIcon(":/image/traymen/ico_download_mgr.png"),"360下载管理",this);
+    QAction *actionappupdate=new QAction(QIcon(":/image/traymen/ico_update_item.png"), u8"程序升级",this);
+    QAction *actiondownloadmanger=new QAction(QIcon(":/image/traymen/ico_download_mgr.png"),u8"360下载管理",this);
 
     menuupdate->addAction(actionappupdate);
     menuupdate->addAction(actiondownloadmanger);
@@ -66,7 +66,7 @@ void trayIconMenu::initlevel2()
 }
 void trayIconMenu::initlevel1()
 {
-    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_safenotify.png"),"安全通知",this);
+    QAction *actioninfo=new QAction(QIcon(":/image/traymen/ico_safenotify.png"),u8"安全通知",this);
     addAction(actioninfo);
 }
 void trayIconMenu::initlevel0()
@@ -121,18 +121,20 @@ void trayIconMenu::paintEvent(QPaintEvent *e)
        }*/
 
 }
+
 ////////////////////////////////////////////////////////////
 level4Widget::level4Widget(QWidget *parent):QWidget(parent)
 {
     QVBoxLayout *vlayout=new QVBoxLayout;
     QVBoxLayout *vlayout1=new QVBoxLayout;
     QHBoxLayout *hlayout=new QHBoxLayout;
-    main6Button *m_btn=new main6Button(":/image/traymen/ico_360safe.png","打开卫士",this);//以坚起为顺序
-    main6Button *m_btn1=new main6Button(":/image/traymen/ico_safecheck.png","查杀修复",this);
-    main6Button *m_btn2=new main6Button(":/image/traymen/ico_speed.png","优化加速",this);
-    main6Button *m_btn3=new main6Button(":/image/traymen/ico_examine.png","电脑体检",this);
-    main6Button *m_btn4=new main6Button(":/image/traymen/ico_clean.png","电脑清理",this);
-    main6Button *m_btn5=new main6Button(":/image/traymen/ico_softmgr.png","软件管家",this);
+
+    main6Button *m_btn  = new main6Button(":/image/traymen/ico_360safe.png", u8"打开卫士",this);//以坚起为顺序
+    main6Button *m_btn1 = new main6Button(":/image/traymen/ico_safecheck.png",u8"查杀修复",this);
+    main6Button *m_btn2 = new main6Button(":/image/traymen/ico_speed.png",u8"优化加速",this);
+    main6Button *m_btn3 = new main6Button(":/image/traymen/ico_examine.png",u8"电脑体检",this);
+    main6Button *m_btn4 = new main6Button(":/image/traymen/ico_clean.png",u8"AA电脑清理AA",this);
+    main6Button *m_btn5 = new main6Button(":/image/traymen/ico_softmgr.png",u8"软件管家",this);
 
     m_btn->setFixedSize(130,92);
     m_btn1->setFixedSize(130,92);
@@ -186,7 +188,7 @@ level5Widget::level5Widget(QWidget *parent):QWidget(parent)
     hlayout->addWidget(m_btn1,0,Qt::AlignLeft);
     hlayout->setSpacing(30);
     hlayout->setContentsMargins(5,0,0,0);
-    QLabel *label=new QLabel("360安全卫士已保护您的电脑365天",this);
+    QLabel *label=new QLabel(u8"360安全卫士已保护您的电脑365天",this);
     hlayout1->addWidget(label);
     hlayout1->setContentsMargins(6,0,0,0);
     label->setStyleSheet("color:white");

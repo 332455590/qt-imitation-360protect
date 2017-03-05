@@ -8,10 +8,11 @@
 class maskmainwidget : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit maskmainwidget(QWidget *parent = 0);
-   UpmainWindow* m_upmain;
-   lowMainWindow* m_lowmain;
+    UpmainWindow* m_upmain;
+    lowMainWindow* m_lowmain;
 signals:
 
 public slots:

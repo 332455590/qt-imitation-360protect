@@ -1,7 +1,8 @@
-#include "lowmainwindow.h"
+﻿#include "lowmainwindow.h"
 #include<QLabel>
 #include"my360button.h"
 #include<QHBoxLayout>
+
 lowMainWindow::lowMainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setStyleSheet("QMainWindow{background:white;}");
@@ -28,10 +29,10 @@ lowMainWindow::lowMainWindow(QWidget *parent) : QMainWindow(parent)
     label2->setGeometry(265,130,70,20);
 
 
-    m_btn3=new main2Button(":/image/rjgj.png",tr("软件管家"),this);
-    m_btn4=new main2Button(":/image/rgfw.png",tr("人工服务"),this);
-    m_btn5=new main2Button(":/image/kdcsq.png",tr("宽带测速器"),this);
-    m_btn6=new main2Button(":/image/360wd.png",tr("360问答"),this);
+    m_btn3=new main2Button(":/image/rjgj.png",  u8"软件管家",   this);
+    m_btn4=new main2Button(":/image/rgfw.png",  u8"人工服务",   this);
+    m_btn5=new main2Button(":/image/kdcsq.png", u8"宽带测速器",  this);
+    m_btn6=new main2Button(":/image/360wd.png", u8"360问答",  this);
     m_btn3->setFixedSize(76,70);
     m_btn4->setFixedSize(76,70);
     m_btn5->setFixedSize(76,70);
@@ -51,7 +52,7 @@ lowMainWindow::lowMainWindow(QWidget *parent) : QMainWindow(parent)
     m_btn8->setGeometry(842,128,32,24);
     m_btn8->setCursor(Qt::PointingHandCursor);
     m_btn8->setStyleSheet("QPushButton{background:transparent;color:rgb(0,135,255);}");
-    m_btn8->setText(tr("更多"));
+    m_btn8->setText(u8"更多");
 
     QPushButton *m_btn9=new QPushButton(this);
     m_btn9->setGeometry(701,30,173,32);
@@ -59,6 +60,4 @@ lowMainWindow::lowMainWindow(QWidget *parent) : QMainWindow(parent)
     m_btn9->setStyleSheet("QPushButton{background:transparent;border-image:url(:/image/win10_normal.png);}"
                         "QPushButton::hover{border-image:url(:/image/win10_hover.png);}"
                         "QPushButton::pressed{border-image:url(:/image/win10_pressed.png);}");
-
-
 }

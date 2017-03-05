@@ -1,4 +1,4 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/">
         <file>image/Menu.png</file>
         <file>image/min.png</file>

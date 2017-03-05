@@ -1,4 +1,4 @@
-#include "yhjswidget.h"
+﻿#include "yhjswidget.h"
 #include"QLabel"
 #include"my360button.h"
 #include<QHBoxLayout>

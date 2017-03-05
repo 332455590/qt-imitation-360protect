@@ -1,4 +1,4 @@
-#ifndef TRAYICONMENU_H
+﻿#ifndef TRAYICONMENU_H
 #define TRAYICONMENU_H
 #include<QPaintEvent>
 #include <QObject>
